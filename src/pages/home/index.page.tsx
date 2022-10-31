@@ -64,7 +64,7 @@ export default function Home() {
                           <Link href={`/${user.id}`} key={user.uid} passHref>
                             <LinkChakra position="relative">
                               <Avatar
-                                boxSize="160px"
+                                boxSize={{ base: "100px", md: "160px" }}
                                 name={user.displayName ? user.displayName : ""}
                                 src={user.photoURL ? user.photoURL : ""}
                               />
@@ -79,7 +79,7 @@ export default function Home() {
                                 borderRadius="full"
                               >
                                 <Image
-                                  boxSize="40px"
+                                  boxSize={{ base: "20px", md: "40px" }}
                                   src={currentType(post.type, "image")}
                                   alt={currentType(post.type, "label")}
                                 />

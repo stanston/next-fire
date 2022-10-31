@@ -13,7 +13,7 @@ const nextConfig = {
       },
     ];
   },
-  // distDir: "build",
+  trailingSlash: true, // Firebase Hosting用
 };
 
 module.exports = nextConfig;

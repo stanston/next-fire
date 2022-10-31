@@ -10,7 +10,7 @@ import {
 } from "firebase/firestore";
 import { db } from "lib/firebase";
 
-const limitPage: number = 10;
+const limitPage: number = 4;
 
 const fetcher = async (ref: string, nextCursor: any[]) => {
   const posts: any = [];
