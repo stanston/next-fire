@@ -84,7 +84,7 @@ export default function Msw() {
         books.push(res.data); // 擬似的に描画するだけ
       })
       .catch((error) => {
-        // console.log(error.response);
+        console.log(error.response);
         if (error.response.status === 403) {
           alert(error.response.data.message);
           return;
