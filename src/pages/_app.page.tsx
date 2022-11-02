@@ -8,6 +8,10 @@ import { ChakraProvider } from "@chakra-ui/react";
 import theme from "lib/theme";
 import Layout from "components/common/Layout";
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+  require("../mocks");
+}
+
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
