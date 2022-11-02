@@ -32,7 +32,7 @@ export const useId = () => {
       if (queryId) {
         const q = query(collection(db, "users"), where("id", "==", queryId));
         const querySnapshot = await getDocs(q);
-        querySnapshot.forEach(async (doc) => {
+        querySnapshot.docs.map((doc) => {
           setUser(doc.data());
         });
         // console.log(user);
@@ -43,7 +43,7 @@ export const useId = () => {
             where("uid", "==", user.uid)
           );
           const querySnapshot = await getDocs(q);
-          querySnapshot.forEach(async (doc) => {
+          querySnapshot.docs.map((doc) => {
             // setPosts((prev: []) => [...prev, doc.data()]);
             posts.push(doc.data());
           });

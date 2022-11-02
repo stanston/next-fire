@@ -63,6 +63,6 @@ export const handlers = [
       );
     }
 
-    return res(ctx.json<any>(values));
+    return res(ctx.json<Book>(values));
   }),
 ];

@@ -33,7 +33,8 @@ const fetcher = async (ref: string, nextCursor: any[]) => {
     );
   }
 
-  querySnapshot.forEach((doc) => {
+  // querySnapshot.forEach((doc) => {
+  querySnapshot.docs.map((doc) => {
     posts.push(doc.data());
     // setPosts((prev: []) => [...prev, doc.data()]);
     // posts = [...posts, doc.data()];

@@ -9,7 +9,7 @@ export const useGetUsers = () => {
     const q = query(collection(db, "users"));
     onSnapshot(q, (querySnapshot) => {
       setUsers([]);
-      querySnapshot.forEach((doc) => {
+      querySnapshot.docs.map((doc) => {
         // users.push(doc.data());
         setUsers((prev: []) => [...prev, doc.data()]);
       });

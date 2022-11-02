@@ -36,7 +36,8 @@ export default function Home() {
     error,
     data,
     users,
-    currentType,
+    getImage,
+    getLabel,
     replaceBr,
     isLast,
     isValidating,
@@ -80,8 +81,8 @@ export default function Home() {
                               >
                                 <Image
                                   boxSize={{ base: "20px", md: "40px" }}
-                                  src={currentType(post.type, "image")}
-                                  alt={currentType(post.type, "label")}
+                                  src={getImage(post.type)}
+                                  alt={getLabel(post.type)}
                                 />
                               </Box>
                             </LinkChakra>

@@ -32,7 +32,7 @@ export const useDelete = () => {
 
       const q = query(collection(db, "posts"), where("uid", "==", user.uid));
       const querySnapshot = await getDocs(q);
-      querySnapshot.forEach(async (doc) => {
+      querySnapshot.docs.map(async (doc) => {
         await deleteDoc(doc.ref);
       });
 

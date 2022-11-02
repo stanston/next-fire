@@ -15,7 +15,7 @@ export const useGetUserIds = () => {
       didLogRef.current = true;
       (async () => {
         const querySnapshot = await getDocs(collection(db, "users"));
-        querySnapshot.forEach((doc) => {
+        querySnapshot.docs.map((doc) => {
           // console.log(doc.id, " => ", doc.data());
           ids.push(doc.data().id);
         });

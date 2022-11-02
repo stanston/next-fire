@@ -17,8 +17,6 @@ export const useHome = () => {
     }
   };
 
-  const isLast = data && data[data.length - 1].length < limitPage;
-
   // これで、すべてのユーザー数を計算できます
   let totalUsers = 0;
   if (data) {
@@ -27,34 +25,34 @@ export const useHome = () => {
     }
   }
 
-  const leadMore = () => {
-    setSize(size + 1);
-  };
-
-  const currentType = (type: number, category: string) => {
-    if (type === 0) {
-      if (category === "label") {
-        return "下痢";
-      } else if (category === "image") {
-        return "/images/soft.webp";
-      }
+  const pooSoft = 0;
+  const getImage = (type: number) => {
+    if (type === pooSoft) {
+      return "/images/soft.webp";
     } else if (type === 1) {
-      if (category === "label") {
-        return "フツウ";
-      } else if (category === "image") {
-        return "/images/normal.webp";
-      }
+      return "/images/normal.webp";
     } else if (type === 2) {
-      if (category === "label") {
-        return "カタメ";
-      } else if (category === "image") {
-        return "/images/hard.webp";
-      }
+      return "/images/hard.webp";
+    }
+  };
+  const getLabel = (type: number) => {
+    if (type === pooSoft) {
+      return "下痢";
+    } else if (type === 1) {
+      return "フツウ";
+    } else if (type === 2) {
+      return "カタメ";
     }
   };
 
   const replaceBr = (comment: string) => {
     return comment.replace(/\n/g, "<br />");
+  };
+
+  const isLast = data && data[data.length - 1].length < limitPage;
+
+  const leadMore = () => {
+    setSize(size + 1);
   };
 
   return {
@@ -63,7 +61,8 @@ export const useHome = () => {
     error,
     data,
     users,
-    currentType,
+    getImage,
+    getLabel,
     replaceBr,
     isLast,
     isValidating,
