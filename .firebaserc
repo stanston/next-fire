@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "poolog-5b869"
-  }
+  },
+  "targets": {
+    "poolog-5b869": {
+      "hosting": {
+        "app": [
+          "poolog-5b869"
+        ],
+        "storybook": [
+          "poolog-storybook"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

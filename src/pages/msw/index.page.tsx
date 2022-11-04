@@ -81,6 +81,7 @@ export default function Msw() {
       .post("/post", values)
       .then((res) => {
         console.log(res.data);
+        alert(`${values.title} ${values.description} 投稿しました。`);
         books.push(res.data); // 擬似的に描画するだけ
       })
       .catch((error) => {

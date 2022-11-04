@@ -1,6 +1,18 @@
 {
-  "hosting": {
-    "source": ".",
-    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-  }
+  "hosting": [
+    {
+      "source": ".",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "app",
+      "public": "storybook",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "target": "storybook",
+      "public": "storybook",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
 }
